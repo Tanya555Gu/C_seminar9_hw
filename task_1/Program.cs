@@ -15,17 +15,12 @@ void PrintEvenNumbers(int M, int N)
     {
         return;
     }
-    if (M % 2 == 0)
-    {
-        Console.Write($"{M} ");
-        PrintEvenNumbers(M + 2, N);
-    }
     if (M % 2 == 1)
     {
         M += 1;
-        Console.Write($"{M} ");
-        PrintEvenNumbers(M + 2, N);
     }
+    Console.Write($"{M} ");
+    PrintEvenNumbers(M + 2, N);
 }
 
 int M = ReadInt("Введине нижнюю границу интервала");
