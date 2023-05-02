@@ -3,3 +3,32 @@
 // M = 1; N = 5 -> "2, 4"
 // M = 4; N = 8 -> "4, 6, 8"
 
+int ReadInt(string messege)
+{
+    Console.Write($"{messege} > ");
+    return Convert.ToInt32(Console.ReadLine());
+}
+
+void PrintEvenNumbers(int M, int N)
+{
+    if (M > N)
+    {
+        return;
+    }
+    if (M % 2 == 0)
+    {
+        Console.Write($"{M} ");
+        PrintEvenNumbers(M + 2, N);
+    }
+    if (M % 2 == 1)
+    {
+        M += 1;
+        Console.Write($"{M} ");
+        PrintEvenNumbers(M + 2, N);
+    }
+}
+
+int M = ReadInt("Введине нижнюю границу интервала");
+int N = ReadInt("Введине верхнюю границу интервала");
+PrintEvenNumbers(M, N);
+
